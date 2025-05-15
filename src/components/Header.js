@@ -7,7 +7,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { LOGO_URL, SUPPORTED_LANGUAGES } from "../utils/constants";
-import { toggleGptSearchView } from "../utils/gptSlice";
+import { clearGptMovies, toggleGptSearchView } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
 
 export const Header = () => {
@@ -47,7 +47,10 @@ export const Header = () => {
     return () => unsubscribe();
   }, []);
 
-  const handleGptSearchClick = () => {
+  const handleGptSearchClick = (e) => {
+    if (e.target.innerHTML === "Home") {
+      dispatch(clearGptMovies());
+    }
     dispatch(toggleGptSearchView());
   };
 

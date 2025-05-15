@@ -11,8 +11,7 @@ export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ZDRmNTRjZWUzMjU5ZmM4NTAwZWRmNTgxNzNmYzc3NiIsIm5iZiI6MS43NDYyMjk2MzkwNjQ5OTk4ZSs5LCJzdWIiOiI2ODE1NTk4NzA3MmE3NDZhNTQ4NGM3ZGQiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.sP7BaMJNKdWUU357Fl6ovs8dAjv4vCAXaF69ll-BAG0",
+    Authorization: "Bearer " + process.env.REACT_APP_TMDB_KEY,
   },
 };
 
@@ -28,6 +27,9 @@ export const TOP_RATED_MOVIES_API =
 export const UPCOMING_MOVIES_API =
   "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1";
 
+export const SEARCH_MOVIE_TMDB_API =
+  "https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1&query=";
+
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500";
 
 export const SUPPORTED_LANGUAGES = [
@@ -35,3 +37,5 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "hi", name: "Hindi" },
   { identifier: "es", name: "Spanish" },
 ];
+
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
