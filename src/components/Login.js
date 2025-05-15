@@ -84,10 +84,14 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img src={BACKGROUND_IMAGE} alt="background-img" />
+        <img
+          className="max-sm:h-screen object-cover"
+          src={BACKGROUND_IMAGE}
+          alt="background-img"
+        />
       </div>
-      <form className="w-4/12 absolute p-12 my-28 bg-black bg-opacity-80 mx-auto right-0 left-0 text-white rounded-xl">
-        <h1 className="font-bold text-3xl py-4">
+      <form className="w-10/12 md:w-4/12 absolute p-12 my-[50%] md:my-28 bg-black bg-opacity-80 mx-auto right-0 left-0 text-white rounded-xl">
+        <h1 className="font-bold text-xl md:text-3xl py-4">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
         {!isSignInForm && (
